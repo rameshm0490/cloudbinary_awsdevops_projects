@@ -16,7 +16,7 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket = "8amcloudbinary"
+    bucket = "mydamramesh"
     key    = "projects_statefile/terraform.state"
     region = "us-east-1"
   }
@@ -28,7 +28,7 @@ resource "aws_instance" "cloudbinary_jenkins" {
   instance_type          = var.instance_type
   key_name               = var.key_name
   subnet_id              = var.subnet_id
-  vpc_security_group_ids = ["sg-0ad9e2e746e28693b"]
+  vpc_security_group_ids = ["sg-03fcd9ddd6c96fbf1"]
   iam_instance_profile   = var.iam_instance_profile
   user_data              = file("jenkins.sh")
   tags = {
@@ -43,7 +43,7 @@ resource "aws_instance" "cloudbinary_sonarqube" {
   instance_type          = var.instance_type
   key_name               = var.key_name
   subnet_id              = var.subnet_id
-  vpc_security_group_ids = ["sg-0ad9e2e746e28693b"]
+  vpc_security_group_ids = ["sg-03fcd9ddd6c96fbf1"]
   iam_instance_profile   = var.iam_instance_profile
   user_data              = file("sonarqube.sh")
   tags = {
@@ -58,7 +58,7 @@ resource "aws_instance" "cloudbinary_jfrog" {
   instance_type          = var.instance_type
   key_name               = var.key_name
   subnet_id              = var.subnet_id
-  vpc_security_group_ids = ["sg-0ad9e2e746e28693b"]
+  vpc_security_group_ids = ["sg-03fcd9ddd6c96fbf1"]
   iam_instance_profile   = var.iam_instance_profile
   user_data              = file("jfrog.sh")
   tags = {
@@ -73,7 +73,7 @@ resource "aws_instance" "cloudbinary_tomcat" {
   instance_type          = var.instance_type
   key_name               = var.key_name
   subnet_id              = var.subnet_id
-  vpc_security_group_ids = ["sg-0ad9e2e746e28693b"]
+  vpc_security_group_ids = ["sg-03fcd9ddd6c96fbf1"]
   iam_instance_profile   = var.iam_instance_profile
   user_data              = file("tomcat.sh")
   tags = {
