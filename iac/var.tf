@@ -7,17 +7,17 @@ variable "instance_type" {
 }
 
 variable "key_name" {
-  default = "cb_aws_nv_keys"
+  default = "dockerkeypair"
 }
 
 variable "subnet_id" {
-  default = "subnet-0385704f22e343550"
+  default = "subnet-08dfc3a07d2825e1b"
 }
 
 variable "vpc_security_group_ids" {
-  default = "sg-0ad9e2e746e28693b"
+  default = "sg-03fcd9ddd6c96fbf1"
 }
 
 variable "iam_instance_profile" {
-  default = "8amSSMEC2"
+  default = "ssmdevops"
 }
